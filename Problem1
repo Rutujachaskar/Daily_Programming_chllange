@@ -1,0 +1,29 @@
+//You are given an unsorted array of integers and a positive integer K. Your task is to find the Kth largest element in the array. The Kth largest element is the element that would appear in the Kth position if the array were sorted in descending order.
+
+//You need to implement a function that returns this Kth largest element without explicitly sorting the entire array.
+
+//Example: arr = [3, 2, 1, 5, 6, 4]
+//k = 2
+//Output: 5
+//Cpp Code
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int i;
+    int arr[]={3,2,1,5,6,4};
+    int k=2;
+    int n=6;
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-1-i;j++){
+            if(arr[j]<arr[j+1]){
+                swap(arr[j],arr[j+1]);
+            }
+        }
+    }
+    cout<<arr[k-1]<<endl;
+
+    return 0;
+}
+
